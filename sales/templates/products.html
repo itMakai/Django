@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="m-5">
+    <h1 class="text-center m-2">Available TV brands</h1>
+    <table class="table bg-primary">
+        <thead class="text-primary">
+            <th>brand</th>
+            <th>size</th>
+            <th>price</th>
+            <th>in_store</th>
+        </thead>
+        <tbody>
+            {% for item in tvs %}
+            <tr>
+                <td>{{item.brand}}</td>
+                <td>{{item.size}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.in_store}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+   
+{% endblock %}
