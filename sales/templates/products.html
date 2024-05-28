@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block main %}
-<div class="m-5">
+<!-- <div class="m-5">
     <h1 class="text-center m-2">Available TV brands</h1>
     <table class="table bg-primary">
         <thead class="text-primary">
@@ -20,6 +20,30 @@
             {% endfor %}
         </tbody>
     </table>
+</div> -->
+
+<h1>product list</h1>
+{%for item in Products%}
+<ol>
+   
+</ol>
+
+
+<div>
+    <div class="card" style="width: 18rem;">
+        <p class="card-text"><img src="https://files.sophie.co.ke/2023/05/Samsung-Galaxy-A24-b_8649.jpg?_gl=1*12obbmu*_up*MQ..*_ga*MTA2NTA2NzE5Mi4xNzE2ODg0ODQw*_ga_0MRWQL8WZC*MTcxNjg4NDg0MC4xLjAuMTcxNjg4NDg0MC4wLjAuMA..*_gcl_aw*R0NMLjE3MTY4ODQ4NDEuQ2p3S0NBandnZGF5QmhCUUVpd0FYaE14dG9saDN5a3NSTURYYmJPTzVQNmtGNkpJUTZfWDl3dzJEaERua3hTMkE3akItd3U5anNxOFl4b0MwTDRRQXZEX0J3RQ..*_gcl_au*MjM2OTkzODkyLjE3MTY4ODQ4NDA.&gclid=CjwKCAjwgdayBhBQEiwAXhMxtolh3yksRMDXbbOO5P6kF6JIQ6_X9ww2DhDnkxS2A7jB-wu9jsq8YxoC0L4QAvD_BwE" alt="" style="max-width: 50%; height: auto;"></p>
+        <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <h5 class="card-title">KES{{item.price}}</h5>
+          <h5 class="card-title">Quantity available{{item.in_store}}</h5>
+
+        <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">order</a>
+        </div>
+      </div>
 </div>
+
+{%endfor%}
    
 {% endblock %}

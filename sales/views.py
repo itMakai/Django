@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from sales.models import Products, Customer, order, orderDetail
 
 # Create your views here.
 def home(request):
@@ -81,3 +82,28 @@ def products(request):
     ]
     context = {'tvs': tvs}
     return render(request , 'products.html', context)
+
+def products(request):
+    products = Products.objects.all()
+    context = {'Products': products}
+    return render(request , 'products.html', context)
+
+def customers(request):
+    customers = Customer.objects.all()
+    context = {'Customers': customers}
+    return render(request , 'customers.html', context)
+
+def order(request, Customer_id):
+    Customer = Customer.objects.get(id=Customer_id)
+    orders = order.objects.filter(customer=Customer)
+    context = {'Orders': orders}
+    return render(request , 'orders.html', context)
+
+
+def order_details(request, order_id):
+    order = order.objects.get(id=order_id)
+    order_details = orderDetail.objects.filter(order=order)
+    context = {'order_details': order_details}
+    return render(request , 'order_details.html', context)
+
+

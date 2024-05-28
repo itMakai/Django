@@ -1,0 +1,4 @@
+create model
+makemigrations
+migrate
+register in the admin
