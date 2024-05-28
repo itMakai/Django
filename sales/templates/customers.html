@@ -1,4 +1,22 @@
-{%extends 'base.html'%}
-{%block main%}
+{% extends 'base.html' %} {% block main %}
 
-{%endblock%}
+<h1>Customers</h1>
+
+<table class="table table-striped">
+    <thead>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{customer.name}}</td>
+            <td>{{customer.phone}}</td>
+            <td>{{customer.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
