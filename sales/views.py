@@ -2,6 +2,7 @@ from django.shortcuts import render
 from sales.models import Product, Customer, Order, OrderDetail
 
 # Create your views here.
+
 def site_home(request):
     return render(request, 'index.html')
     
@@ -17,12 +18,12 @@ def customers(request):
     context = {'customers': customers}
     return render(request, 'customers.html', context)
 
-def orders(request, customer_id):
+def orders(request, cust_id):
 
-    current_customer = Customer.objects.get(id=customer_id)
+    current_customer = Customer.objects.get(id=cust_id)
 
     if current_customer:
-        orders = Order.objects.filter(customer=current_customer)
+        orders = Order.objects.filter(customer_=cust_id)
         context = {'orders': orders}
         
     context.update({'customer': current_customer})
