@@ -5,7 +5,7 @@
         {% for product in products %}
         <div class="col-4 p-1">
             <div class="card" style="width: 18rem;">
-                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQhXI2onacbcwlbq_3n6Q12HwCux9-QKx--q-rZR2ugOYF8ltrehI_rx81m0j9TLgezNXfHwFmlVwwT3jXnYQN4fQLIVQTwXzOAwcBuew3nf0fyBOXByNowLQ&usqp=CAc" class="card-img-top" alt="...">
+                <img src="{{product.image.url}}" class="card-img-top" alt="{{ product.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">KES {{ product.price }}</p>

@@ -18,18 +18,26 @@ from django.contrib import admin
 from django.urls import path
 from sales.views import site_home, products_list, customers, orders, order_details
 from accounts.views import login_page, signin, register_page, register
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", site_home, name="home"),
+]
+
+urlpatterns +=[
     path("products", products_list, name="products"),
     path("customers", customers, name="customers"),
     path("orders/<int:cust_id>", orders, name="orders"),
     path("order_details/<int:order_id>", order_details, name="order_details"),
+]
 
+urlpatterns += [
     path("login_page", login_page, name="login_page"),
     path("signin", signin, name="signin"),
     
     path("register_page", register_page, name='register_page'),
     path("register", register, name='register')
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
