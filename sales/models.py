@@ -21,6 +21,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to ='media/images')
     
     
     
